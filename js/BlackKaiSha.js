@@ -56,7 +56,7 @@ function creatTable (arr) {
 
 
 
-function createChart (arr) {
+function createChart (arr,arr2) {
 	var myChart = echarts.init(document.getElementById('mapDIV'));
 
 // 过渡---------------------
@@ -187,7 +187,7 @@ option = {
 //                  {name: "武汉", value: 273},
 //                  {name: "大庆", value: 279}
 //              ]
-				arr
+				arr2
             }
         }
     ]
@@ -219,6 +219,7 @@ $('[data-toggle="tooltip"]').tooltip();
       $('#commitbtn').on('click',function (event) {
       	if ($('#inputaddr').val().length >0 &&$('#inputname').val().length >0) {
 //        var addr = $('#inputaddr1').val()+" "+$('#inputaddr2').val();
+			
           var addr = $('#inputaddr').val();
           var name = $('#inputname').val();
           var des = $('#inputdes').val();
@@ -302,7 +303,7 @@ return b.count - a.count;
 			}
 		}
 		
-		createChart (arr3);
+		createChart (arr2,arr3);
 
 		_my_progress.finish();
 
