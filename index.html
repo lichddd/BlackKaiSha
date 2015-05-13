@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+		<style type="text/css">
+			@font-face {
+			font-family: 'Glyphicons Halflings';
+			
+			src: url('bootstrap/fonts/glyphicons-halflings-regular.eot');
+			src: url('bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
+			url('bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'), 
+			url('bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'), 
+			url('bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+			}
+		</style>
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script src="http://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
+		<link rel="stylesheet" href="bootstrap-table/bootstrap-table.css" />
+		<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+		<script type="text/javascript" src="bootstrap-table/bootstrap-table.js"></script>
+		<script type="text/javascript" src="bootstrap-table/locale/bootstrap-table-zh-CN.js"></script>
+		<script type="text/javascript" src="echarts/echarts-all.js"></script>
+
+		<script type="text/javascript" src="js/my_alert.js"></script>
+		<script type="text/javascript" src="js/my_progress.js"></script>
+		<script type="text/javascript" src="js/my_shark.js"></script>
+		<link rel="stylesheet" href="css/my_progress.css" />
+		<link rel="stylesheet" href="css/my_alert.css" />
+		<link rel="stylesheet" href="css/my_shark.css" />
+
+		<script type="text/javascript" src="js/city_position.js" ></script>
+		<script type="text/javascript" src="js/firebase.js"></script>
+		<script type="text/javascript" src="js/BlackKaiSha.js"></script>
+
+		<link rel="stylesheet" href="css/BlackKaiSha.css" />
+		<title></title>
+	</head>
+
+	<body>
+
+		<div class="jumbotron">
+			<div class="container">
+
+				<h1>辣鸡公司排行</h1>
+				<p>我要<a class="btn btn-danger" data-toggle="modal" data-target="#myModal" role="button">菊爆</a>辣鸡公司</p>
+
+			</div>
+		</div>
+
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+						</button>
+						<h2 class="modal-title" id="myModalLabel">菊爆新公司</h4>
+						<h6>如果已存在公司名称和所在地都相同的公司默认认为是同一个公司进行统计</h6>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal">
+							<div class="form-group">
+								<label for="inputname" class="col-sm-2 control-label">公司名称</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="inputname" placeholder="最好不要写简称">
+								
+								
+								
+								
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputaddr" class="col-sm-2 control-label">所在地</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="inputaddr" placeholder="例如 北京、东京、南京 不要加市">
+									
+									
+									<!--<input type="text" class="form-control" placeholder="例如 新疆、内蒙古、台湾等 不要加省 自治区" id="inputaddr1" aria-describedby="basic-addon1">
+									<span class="input-group-addon" id="basic-addon1">省</span>
+  									<input type="text" class="form-control" placeholder="例如 北京、香港、台北等 不要加市" id="inputaddr2" aria-describedby="basic-addon1">
+									<span class="input-group-addon" id="basic-addon1">市</span>
+								
+								-->
+								
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputdes" class="col-sm-2 control-label">罪状</label>
+								<div class="col-sm-10">
+									<textarea id="inputdes" placeholder="例如 拖欠工资等" class="form-control" rows="3"></textarea>
+									
+								</div>
+							</div>
+							
+						</form>
+					</div>
+					<div class="modal-footer">
+						<!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+						<button type="button" id="commitbtn" data-dismiss="modal" class="btn btn-primary">提交</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="mapDIV" class="mapDIV"></div>
+
+		<div class="tableDIV">
+
+			<table id="my_table" data-cache="false" data-height="400" data-show-toggle="true" data-show-columns="true" data-search="true" data-select-item-name="toolbar1" data-pagination="true">
+				<thead>
+					<tr>
+						<!--<th data-field="time" data-formatter="timeFormatter">时间</th>-->
+						<th data-field="name">公司名称</th>
+						<th data-field="addr">所在地</th>
+						<th data-field="count" data-formatter="countFormatter">菊爆次数</th>
+						<!--<th data-field="des">罪状</th>-->
+						<!--<th data-field="text">弹幕</th>-->
+
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</body>
+
+</html>

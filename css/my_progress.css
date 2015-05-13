@@ -1,0 +1,65 @@
+.my_progress
+			{
+					position: absolute;
+					left: 50%;
+					right: 50%;
+					top: 50%;
+					bottom: 50%;
+					color: #E3E3E3;
+					width: 64px;
+					height: 64px;
+					font-size: 64px;
+					animation-name: myfirst2;
+					animation-duration: 2s;
+					animation-iteration-count: infinite;
+					animation-timing-function: linear;
+					-moz-animation-name: myfirst2;
+					-moz-animation-duration: 2s;
+					-moz-animation-iteration-count: infinite;
+					-moz-animation-timing-function: linear;
+					-ms-animation-name: myfirst2;
+					-ms-animation-duration: 2s;
+					-ms-animation-iteration-count: infinite;
+					-ms-animation-timing-function: linear;
+					-webkit-animation-name: myfirst2;
+					-webkit-animation-duration: 2s;
+					-webkit-animation-iteration-count: infinite;
+					-webkit-animation-timing-function: linear;
+					-o-animation-name: myfirst2;
+					-o-animation-duration: 2s;
+					-o-animation-iteration-count: infinite;
+					-o-animation-timing-function: linear;
+					
+			}
+
+			
+			
+			@keyframes myfirst2
+			{
+			0% {transform: rotate(0deg);}
+			100% {transform: rotate(359deg);}
+			}
+			
+			@-moz-keyframes myfirst2/* Firefox */
+			{
+			0% {-moz-transform: rotate(0deg);}
+			100% {-moz-transform: rotate(359deg);}
+			}
+			
+			@-webkit-keyframes myfirst2/* Safari and Chrome */
+			{
+			0% {-webkit-transform: rotate(0deg);}
+			100% {-webkit-transform: rotate(359deg);}
+			}
+			
+			@-o-keyframes myfirst2/* Opera */
+			{
+			0% {-o-transform: rotate(0deg);}
+			100% {-o-transform: rotate(359deg);}
+			}
+			
+			@-ms-keyframes myfirst2/* Opera */
+			{
+			0% {-ms-transform: rotate(0deg);}
+			100% {-ms-transform: rotate(359deg);}
+			}
